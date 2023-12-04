@@ -1,19 +1,12 @@
 import re
 
-def searchNum(x, y, numbers, schema, touchNum):
-    touching = []
-    for num in numbers[y]:
-            if  num[0] <= x <= num[1]  :
-                return num
-    return 0 
-
 def checkStars(schem, stars, numbers, y):
     total = 0
     for star in stars: # iterate through stars
         touchPos = []
         touchNum = []
         for i in range(-1, 2):  
-            for j in range(-1, 2): # check surrounding swaure for digits
+            for j in range(-1, 2): # check surrounding sqaure for digits
                 if schem[star[1]+i][star[0]+j].isdigit(): # if square is digit
                     for num in numbers[star[1]+i]:
                         if num[0] <= star[0]+j <= num[1]:
